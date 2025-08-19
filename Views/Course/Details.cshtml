@@ -1,0 +1,14 @@
+@model DersKayit.Models.Course
+
+<section class="container my-5">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title">@Model.Title</h2>
+            <p class="text-muted">@Model.Category</p>
+            <p class="card-text">@Model.Description</p>
+
+            <a href="/Course/Apply/@Model.Id" class="btn btn-primary mt-3">Bu Kursa Başvur</a>
+            <a href="/Course/List" class="btn btn-outline-secondary mt-3 ms-2">← Geri Dön</a>
+        </div>
+    </div>
+</section>

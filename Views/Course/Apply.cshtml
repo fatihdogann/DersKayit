@@ -1,0 +1,43 @@
+@model DersKayit.Models.CourseApplication
+@{
+    ViewData["Title"] = "Kursa Başvur";
+}
+
+<h2>Kursa Başvuru</h2>
+<p>Kurs ID: <strong>@ViewBag.CourseId</strong></p>
+
+<!-- id’li adrese POST -->    
+<form action="/Course/Apply/@ViewBag.CourseId" method="post" class="mt-4">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="CourseId" value="@ViewBag.CourseId" />
+
+    <div class="mb-3">
+        <label class="form-label">Ad Soyad</label>
+        <input  type="text" name="Name" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input  type="email" name="Email" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Telefon</label>
+        <input  type="tel" name="Phone" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Eğitim Seviyesi</label>
+        <select name="EducationLevel" class="form-control">
+            <option>Lise</option><option>Ön Lisans</option><option>Lisans</option>
+            <option>Yüksek Lisans</option><option>Doktora</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Kursa Katılma Amacınız</label>
+        <textarea name="Motivation" rows="3" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Başvur</button>
+</form>

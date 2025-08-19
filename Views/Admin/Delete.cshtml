@@ -1,0 +1,24 @@
+@model DersKayit.Models.Course
+@{
+    ViewData["Title"] = "Kursu Sil";
+}
+
+<section class="container my-5">
+    <h2 class="mb-4 text-danger">Kursu Sil</h2>
+
+    <div class="alert alert-warning">
+        <p><strong>@Model.Title</strong> başlıklı kursu silmek üzeresiniz.</p>
+        <p class="fw-bold">Bu işlem geri alınamaz. Devam etmek istiyor musunuz?</p>
+    </div>
+
+    <!-- Silme: POST /Course/Delete/{id}  -->
+    <form asp-action="Delete"          
+          asp-route-id="@Model.Id"
+          method="post"
+          class="d-inline">
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-danger">Evet, Sil</button>
+    </form>
+
+    <a asp-action="List" class="btn btn-secondary ms-2">İptal</a>
+</section>

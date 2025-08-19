@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #f1f4f9, #dff1ff);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #1d3557;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    padding: 12px 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #1d3557 !important;
+}
+
+.nav-link {
+    color: #333 !important;
+    margin-left: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #1d3557 !important;
+}
+
+.card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary {
+    background-color: #1d3557;
+    border-color: #1d3557;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #457b9d;
+    border-color: #457b9d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(69, 123, 157, 0.2);
+}
+input[type="text"],
+input[type="email"],
+textarea {
+    border-radius: 6px;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    width: 100%;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #1d3557;
+    box-shadow: 0 0 0 0.2rem rgba(69, 123, 157, 0.25);
+}
+.social-link {
+    color: #1d3557;
+    font-size: 1.5rem;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.2);
+    color: #ffd166;
+    text-decoration: none;
+}
+footer {
+    background: linear-gradient(to right, #457b9d, #1d3557);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: auto;
+    width: 100%;
+}
+.hero {
+    background: linear-gradient(to right, #457b9d, #1d3557);
+    color: white;
+    padding: 80px 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+@media (max-width: 768px) {
+    .social-link {
+        font-size: 1.3rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}

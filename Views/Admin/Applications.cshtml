@@ -1,0 +1,45 @@
+@model List<DersKayit.Models.CourseApplication>
+
+<section class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <h2 class="mb-0">Başvuru Listesi</h2>
+        <a href="/Admin/ExportApplications" class="btn btn-outline-primary">
+            <i class="fas fa-file-download me-2"></i>CSV Olarak İndir
+        </a>
+    </div>
+
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-info">Henüz başvuru yok.</div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle shadow-sm bg-white">
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th>Ad Soyad</th>
+                        <th>Email</th>
+                        <th>Telefon</th>
+                        <th>Eğitim</th>
+                        <th>Motivasyon</th>
+                        <th>Kurs ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Email</td>
+                            <td>@item.Phone</td>
+                            <td>@item.EducationLevel</td>
+                            <td>@item.Motivation</td>
+                            <td>@item.CourseId</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</section>

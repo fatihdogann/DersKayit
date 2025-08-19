@@ -1,0 +1,72 @@
+@model List<DersKayit.Models.Course>
+
+@{
+    var categories       = ViewBag.Categories       as List<string> ?? new List<string>();
+    var selectedCategory = ViewBag.SelectedCategory as string;
+    var role             = Context.Session.GetString("Role");
+}
+
+<section class="container my-5">
+    <h2 class="mb-4">Kurslar</h2>
+
+    <!-- Kategori filtresi -->
+    @if (categories.Any())
+    {
+        <form method="get" asp-action="List" class="mb-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <select name="category" class="form-select" onchange="this.form.submit()">
+                        <option value="">Tüm Kategoriler</option>
+                        @foreach (var cat in categories)
+                        {
+                            <option value="@cat" selected="@(cat == selectedCategory ? "selected" : null)">
+                                @cat
+                            </option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </form>
+    }
+
+    <!-- Kurs kartları -->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var course in Model)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">
+                            <a href="/Course/Details/@course.Id" class="text-decoration-none text-dark">
+                                @course.Title
+                            </a>
+                        </h5>
+
+                        <p class="card-text flex-grow-1">@course.Description</p>
+                        <span class="badge bg-secondary">@course.Category</span>
+
+                        <!-- Başvur -->
+                        <a href="/Course/Apply/@course.Id" class="btn btn-primary w-100 mt-3">Başvur</a>
+
+                        <!-- Sil (yalnızca Admin) -->
+                        @if (role == "Admin")
+                        {
+                            <form asp-action="Delete"
+                                  asp-controller="Course"
+                                  asp-route-id="@course.Id"
+                                  method="post"
+                                  class="mt-2">
+                                @Html.AntiForgeryToken()
+                                <button type="submit"
+                                        class="btn btn-danger w-100"
+                                        onclick="return confirm('Silmek istediğinize emin misiniz?')">
+                                    Sil
+                                </button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
