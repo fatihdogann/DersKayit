@@ -42,10 +42,10 @@ Bu proje, ASP.NET Core MVC kullanılarak geliştirilmiş bir ders kayıt uygulam
 
 ## Ekran Görüntüleri
 
-![Ana Sayfa](screenshots/1.png)
-![Ders Listesi](screenshots/2.png)
-![Ders Detayı](screenshots/3.png)
-![Admin Paneli](screenshots/4.png)
+(screenshots/1.png)
+(screenshots/2.png)
+(screenshots/3.png)
+(screenshots/4.png)
 
 ## Katkıda Bulunma
 
