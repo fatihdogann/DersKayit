@@ -42,17 +42,17 @@ Bu proje, ASP.NET Core MVC kullanılarak geliştirilmiş bir ders kayıt uygulam
 
 ## Ekran Görüntüleri
 
-<<<<<<< HEAD
+
 ![Ekran Resmi 1](screenshots/1.png)
 ![Ekran Resmi 2](screenshots/2.png)
 ![Ekran Resmi 3](screenshots/3.png)
 ![Ekran Resmi 4](screenshots/4.png)
-=======
+
 (screenshots/1.png)
 (screenshots/2.png)
 (screenshots/3.png)
 (screenshots/4.png)
->>>>>>> 5eb5a7d12214e98ca1f89a7f8ee9194f41221c47
+
 
 ## Katkıda Bulunma
 
@@ -65,3 +65,4 @@ Bu proje, ASP.NET Core MVC kullanılarak geliştirilmiş bir ders kayıt uygulam
 ## Lisans
 
 Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına bakınız.
+
