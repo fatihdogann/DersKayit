@@ -66,3 +66,13 @@ Bu proje, ASP.NET Core MVC kullanılarak geliştirilmiş bir ders kayıt uygulam
 
 Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına bakınız.
 
+---
+
+## Geliştirici
+
+**Mehmet Fatih Doğan** — backend geliştirici, güvenlik meraklısı.
+
+- 🌐 Portfolyo & iletişim: [mehmetfatihdogan.com.tr](https://mehmetfatihdogan.com.tr)
+- 💻 GitHub: [@fatihdogann](https://github.com/fatihdogann)
+
+Proje hakkında soru, hata bildirimi veya geri bildirim için [iletişim sayfamdan](https://mehmetfatihdogan.com.tr/iletisim) ulaşabilirsin.
