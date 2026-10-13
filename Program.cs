@@ -5,6 +5,7 @@ using DersKayit.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
 
 // EF Core - SQLite bağlantısı
@@ -16,6 +17,10 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+    // Demo veritabanı depoya eklenmez; temiz kurulum modelden oluşturulur.
+    // EnsureCreated mevcut veritabanının şemasını değiştirmez.
+    db.Database.EnsureCreated();
 
     if (!db.Courses.Any())
     {

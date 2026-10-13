@@ -51,3 +51,8 @@ Thumbs.db
 
 # Paket / bağımlılık klasörleri
 node_modules/
+
+# Yerel demo verisi çalışma sırasında üretilir.
+*.db
+*.db-shm
+*.db-wal

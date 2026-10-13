@@ -25,10 +25,27 @@ Bu proje, ASP.NET Core MVC kullanılarak geliştirilmiş bir ders kayıt uygulam
 
 2. Projeyi çalıştırın:
    ```bash
-   dotnet run
+   dotnet run --no-launch-profile --urls http://localhost:5000
    ```
 
-3. Tarayıcınızda `https://localhost:5001` adresine gidin.
+3. Tarayıcınızda `http://localhost:5000` adresine gidin. İlk çalıştırmada yerel
+   `basvurular.db` ve örnek dersler oluşturulur; veritabanı Git'e eklenmez.
+
+Bu eski proje bir eğitim demosudur. Hazır demo hesapları ve basit oturum modeli
+gerçek kullanıcılarla üretim kullanımına uygun değildir.
+
+## Doğrulama
+
+```bash
+dotnet restore
+dotnet build --configuration Release --no-restore
+dotnet publish DersKayit.csproj --configuration Release --no-build --output /tmp/derskayit-publish
+python3 scripts/smoke_test.py /tmp/derskayit-publish
+```
+
+CI, uygulamayı boş ve geçici bir veritabanıyla başlatır; ders listesini, oturum
+gerektiren sayfalara erişim sınırını ve CSRF korumasını kontrol eder. Kontrol
+kullanıcının mevcut veritabanına yazmaz.
 
 ## Kullanım
 
@@ -47,12 +64,6 @@ Bu proje, ASP.NET Core MVC kullanılarak geliştirilmiş bir ders kayıt uygulam
 ![Ekran Resmi 2](screenshots/2.png)
 ![Ekran Resmi 3](screenshots/3.png)
 ![Ekran Resmi 4](screenshots/4.png)
-
-(screenshots/1.png)
-(screenshots/2.png)
-(screenshots/3.png)
-(screenshots/4.png)
-
 
 ## Katkıda Bulunma
 

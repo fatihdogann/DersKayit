@@ -1,0 +1,16 @@
+name: CI
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  build-and-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+      - run: dotnet restore
+      - run: dotnet build --configuration Release --no-restore
+      - run: dotnet publish DersKayit.csproj --configuration Release --no-build --output ${{ runner.temp }}/derskayit
+      - run: python3 scripts/smoke_test.py ${{ runner.temp }}/derskayit
